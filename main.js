@@ -36,24 +36,15 @@ function pedirToken() {
   localStorage.setItem("gh_token", token);
 }
 
-/**********************
- * MOSTRAR EDITOR (CTRL + M)
- **********************/
-document.addEventListener("keydown", e => {
-    console.log("keyprev");
-    if (e.ctrlKey && e.key.toLowerCase() === "m") {
-        
-    console.log("keydonw");
-    console.log(localStorage.getItem("gh_token"));
-    if (!token) {
-      pedirToken();
-    }
-    if (token) {
-      pedirToken();
-      document.getElementById("editor").style.display = "block";
-    }
+function mostrarEditor() {
+  if (!token) {
+    pedirToken();
   }
-});
+
+  if (token) {
+    document.getElementById("editor").style.display = "block";
+  }
+}
 
 /**********************
  * GUARDAR NUEVO VALOR
