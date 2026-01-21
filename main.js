@@ -13,12 +13,28 @@ async function cargarNumero() {
   try {
     const r = await fetch("data.json?ts=" + Date.now());
     const d = await r.json();
-    document.getElementById("numero").innerText = d.valor;
+
+    const valor = Math.max(0, Math.min(100, d.valor));
+
+    document.getElementById("numero").innerText = valor;
+
+    const liquido = document.getElementById("liquido");
+    liquido.style.height = valor + "%";
+
+    if (valor < 34) {
+      liquido.style.backgroundColor = "#e74c3c"; // rojo
+    } else if (valor < 67) {
+      liquido.style.backgroundColor = "#f1c40f"; // amarillo
+    } else {
+      liquido.style.backgroundColor = "#2ecc71"; // verde
+    }
+
   } catch (e) {
     document.getElementById("numero").innerText = "Error";
     console.error(e);
   }
 }
+
 
 cargarNumero();
 

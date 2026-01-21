@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Número público</title>
+  <meta charset="UTF-8" />
+  <title>Barra de Amor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Número público</h1>
-  <h2 id="numero">Cargando...</h2>
-<button id="btnEditar" onclick="mostrarEditor()">Editar</button>
 
-<p id="editor" style="display:none">
-  Nuevo valor:
-  <input id="nuevoValor" type="number">
-  <button onclick="guardar()">Guardar</button>
-</p>
+  <div class="container">
+
+    <!-- Valor numérico -->
+    <div class="valor-texto">
+      <span id="numero">--</span>%
+    </div>
+
+    <!-- Probeta -->
+    <div class="probeta">
+      <div class="marcas">
+        <!-- se generan por CSS -->
+      </div>
+
+      <div class="liquido" id="liquido"></div>
+    </div>
+
+    <!-- Botón editar -->
+    <button id="btnEditar" onclick="mostrarEditor()">Editar</button>
+
+    <!-- Editor -->
+    <div id="editor" class="editor">
+      <input id="nuevoValor" type="number" min="0" max="100" placeholder="0 - 100" />
+      <button onclick="guardar()">Guardar</button>
+    </div>
+
+  </div>
 
   <script src="main.js"></script>
 </body>
