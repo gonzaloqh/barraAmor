@@ -71,7 +71,7 @@ async function guardar() {
       `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`,
       {
         headers: {
-          Authorization: "token " + token,
+          Authorization: "Bearer " + token,
           Accept: "application/vnd.github+json"
         }
       }
@@ -94,7 +94,7 @@ async function guardar() {
       {
         method: "PUT",
         headers: {
-          Authorization: "token " + token,
+          Authorization: "Bearer " + token,
           "Content-Type": "application/json",
           Accept: "application/vnd.github+json"
         },
