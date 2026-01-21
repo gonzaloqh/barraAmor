@@ -40,7 +40,11 @@ function pedirToken() {
  * MOSTRAR EDITOR (CTRL + M)
  **********************/
 document.addEventListener("keydown", e => {
-  if (e.ctrlKey && e.key.toLowerCase() === "m") {
+    console.log("keyprev");
+    if (e.ctrlKey && e.key.toLowerCase() === "m") {
+        
+    console.log("keydonw");
+    console.log(localStorage.getItem("gh_token"));
     if (!token) {
       pedirToken();
     }
