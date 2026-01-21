@@ -49,6 +49,7 @@ document.addEventListener("keydown", e => {
       pedirToken();
     }
     if (token) {
+      pedirToken();
       document.getElementById("editor").style.display = "block";
     }
   }
